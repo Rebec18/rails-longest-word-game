@@ -1,0 +1,9 @@
+<h1>Your Score</h1>
+<% if @grid_word != true %>
+<%= "Sorry but #{@attempt.upcase} can't be built out of #{params[:grid]}" %>
+<% elsif @english_word != true %>
+<%= "Sorry but #{@attempt.upcase} does not seem to be a valid English word ... " %>
+<% else %>
+<%= "Congratulations! #{@attempt.upcase} is a valid English word" %>
+<% end %>
+<%= link_to "New game", new_path, class: "btn btn-info" %>

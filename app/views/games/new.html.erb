@@ -1,0 +1,15 @@
+<div class="entier">
+<h1>New Game</h1>
+<p></p>
+<% @letters.each do |letter| %>
+<li class= "btn btn-primary"><%= letter %></li>
+<% end %>
+<p></p>
+<form action="/score" method="post" id="formulaire">
+  <h3>Try a word !</h3>
+  <input type="text" name="word" class="form-group" placeholder="Enter your word">
+  <input type="submit" value="Valid" class="btn btn-secondary">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag 'grid', @letters %>
+</form>
+</div>
